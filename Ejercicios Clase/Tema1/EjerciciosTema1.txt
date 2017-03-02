@@ -1,0 +1,14 @@
+apache: Se utiliza principalmente como servidor web HTTP, es el más utilizado para almacenar webs.
+
+ngix: Además de ser utilizado como servidor web HTTP, ngix también ofrece servidos de correo electrónico
+que incluyen servicios POP e IMAP. Tambíen se utiliza como balanceador de carga entre servidores back-end.
+
+thttpd: Es un servidor http, más ligero y simple que Apache es utilizado sobre todo para pqueñeos servidores
+que tengan poco trafico.
+
+Cherokee: Es un servidor web multiplataforma, un proyecto de software libre. Su idea es crear
+un servidor web alternativo a los actuales como apache, intentando ser mas pequeño y ligero. Actualmente es mantenido
+por una comunidad abierta de desarrolladores.
+
+node.js: Es un entorno de ejecución Javascript que se ejecuta en el servidor. Se utiliza para poder ejecutar los
+programas en el propio servidor, no en el cliente.
