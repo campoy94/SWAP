@@ -1,0 +1,30 @@
+Ejercicio T2.2:
+
+Buscar frameworks y librerías para diferentes lenguajes quepermitan hacer
+aplicaciones altamente disponibles con relativa facilidad.
+
+Como ejemplo, examina PM2
+https://github.com/Unitech/pm2
+que sirve para administrar clústeres de NodeJS.
+
+
+PM2: es un gestor de procesos de producción para aplicaciones NodeJS
+que incorpora un balanceador de carga. Permite mantener las aplicaciones
+siempre activas, y volver a cargarlas sin tiempo de inactividad. Facilita
+las tareas cominues de un administrador de sistema. PM2 también gestiona
+el registro de aplicaciones, la supervisión de las mismas y la agrupación
+en cluster.
+
+Forever: es una herramienta que permite garantizar la ejecución continua de
+un script. Su sencillez la hace idial para despliegues pequeños de scripts y
+aplicaciones NodeJS.
+
+StrongLoop Process Manager: es un gestor de procesos de producción para
+aplicaciones NodeJS. StrongLoop PM incorpora un balanceador de carga, 
+supervisión y varios hosts. Es utilizado para las siguientes tareas:
+
+-Crear, empaquetar y desplegar aplicaciones NodeJS en un sistema local o remoto.
+-Ver perfiles de CPU e instantáneas de almacenamiento dinámico para optimizar el
+rendimiento.
+-Mantener siempre activas las aplicaciones y/los clústeres.
+-Monitorizar el rendimiento de las aplicaciones.

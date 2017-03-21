@@ -1,0 +1,30 @@
+Ejercicio T2.4:
+
+Buscar ejemplos de balanceadores software y hardware (productos comerciales).
+Buscar productos comerciales para servidores de aplicaciones.
+Buscar productos comerciales para servidores de almacenamiento.
+
+
+Balanceador de carga software:
+
+La empresa KEMP ofrece los siguientes productos:
+https://kemptechnologies.com/loadmaster-family-virtual-server-load-balancers-application-delivery-controllers/
+
+Balanceador de carga Hardware:
+
+La empresa KEMP ofrece varios productos:
+https://kemptechnologies.com/es/server-load-balancing-appliances/product-matrix.html
+
+Algunas empresas que utilizan pdroductos de KEMP son: Motorola, Apple o la NASA
+
+Servidores de Aplicaciones y de Almacenamiento:
+
+Servers Dell:
+http://www.dell.com/es/empresas/p/poweredge-rack-servers?~ck=anav
+
+Servers HP:
+https://www.hpe.com/es/es/servers.html
+
+Disponemos de varias empresas que nos ofrecen servidores genéricos, tendriamos que equiparlos al gusto para obtener
+uno servidor más enfocado a aplicaciones, bases de datos...
+

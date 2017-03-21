@@ -1,0 +1,28 @@
+Ejercicio T2.3:
+
+¿Cómo analizar el nivel de carga de cada uno de los subsistemas en el servidor?
+Buscar herramientas y aprender a usarlas.
+...¡o recordar cómo usarlas!
+
+ApacheBench: Nos la ofrece Apache, y sirve para hacer pruebas de carga a nuestro
+servidor. El formato más comun de utilizarlo es el siguiente:
+
+ab -n 5000 -c 70 -g grafica.data http://...
+
+	ab: llamamos al programa
+	-n: número de peticiones
+	-c: número de coneiones concurrentes
+	-g: para generar una gráfica con gnuplot
+	-Finalmente introducimos la dirección del servidor que queremos probar
+
+Boom: Es una herramienta de fácil instalación que sirve para hacer pruebas de
+carga a un servidor web. Tiene más compatibilidad con distintas plataformas que
+ApacheBench y funciona prácticamente en cualquier entorno. Ejemplo de uso:
+
+boom -n 5000 -c 70 http://...
+
+	boom: llamamos al programa
+	-n: número de peticiones
+	-c: número de conexiones concurrentes
+	-Por último introducimos la url del servidor
+
