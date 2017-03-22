@@ -78,7 +78,7 @@ cron se encargará de lanzar el comando cada minuto, con el usuario indicado.
 
 ![Captura de pantalla crontab](URL "swapp2img4.PNG")
 
------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
 ### Consejos y observaciones a la hora de realizar la práctica:
 
 	-Trabajar como root o como user(o una o otra)
