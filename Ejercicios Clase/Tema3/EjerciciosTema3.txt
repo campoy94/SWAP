@@ -1,0 +1,25 @@
+Ejercicio T3.1:
+Buscar con qué órdenes de terminal o herramientas gráficas podemos configurar bajo Windows y bajo Linux el
+enrutamiento del tráfico de un servidor para pasar el tráfico desde una subred a otra.
+
+
+-iptables(Linux): es un firewall integrado en el kernel de Linux y permite configurar el enrutamiento de las redes
+en nuestra maquina.
+
+-route(Windows y Linux): es un comando que podemos utilizar para configurar manualmente las rutas de la tabla de 
+rutas para encaminar redes.
+
+
+Ejercicio T3.2:
+Buscar con qué órdenes de terminal o herramientas gráficas podemos configurar bajo Windows y bajo Linux el filtrado
+y bloqueo de paquetes.
+
+
+-iptables(Linux): es un firewall integrado en el kernel de Linux, además de el enrutamiento nos permite hacer
+filtro y bloqueo de paquetes.
+
+-netfilter(Linux): es un framework disponible en el núcleo Linux, que permite interceptar y manipular paquetes
+de red.
+
+-firewall de windows(windows): se incluye en todas las versiones modernas de Windows.
+
