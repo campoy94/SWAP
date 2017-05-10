@@ -8,7 +8,7 @@ Primero activamos el módulo SSL de Apache y reiniciamos el servidor:
 
 	`service apache2 restart`
 
-	![Captura e2enmod](https://github.com/acampoy94/SWAP/blob/master/practicas/practica4/Captura1.PNG)
+	![Captura e2enmod](https://github.com/acampoy94/SWAP/blob/master/Practicas/Practica4/Captura1.PNG)
 
 Creamos la carpeta para guardar los certificados:
 
@@ -21,7 +21,7 @@ Creamos el certificado con openssl:
 
 Rellenamos una serie de datos:
 
-	![Captura capturaOpenssl](https://github.com/acampoy94/SWAP/blob/master/practicas/practica4/Captura2.PNG)
+	![Captura capturaOpenssl](https://github.com/acampoy94/SWAP/blob/master/Practicas/Practica4/Captura2.PNG)
 
 Editamos del archivo de configuración del sitio:
 
@@ -40,8 +40,8 @@ Activamos el sitio default--ssl y reiniciamos apache:
 Para probar que ha funcionado accedemos desde un navegador de una máquina conectada a:
 	https://ipM
 
-	![CapturaHTTPSM1](https://github.com/acampoy94/SWAP/blob/master/practicas/practica4/Captura3.PNG)
-	![CapturaHTTPSM1](https://github.com/acampoy94/SWAP/blob/master/practicas/practica4/Captura3.1.PNG)
+	![CapturaHTTPSM1](https://github.com/acampoy94/SWAP/blob/master/Practicas/Practica4/Captura3.PNG)
+	![CapturaHTTPSM1](https://github.com/acampoy94/SWAP/blob/master/Practicas/Practica4/Captura3.1.PNG)
 
 Ahora pasamos el certificado a la máquina2:
 
@@ -58,7 +58,7 @@ Activamos ssl en M2:
 
 Comprobamos que funciona:
 
-	![CaptURAHTTPSM2](https://github.com/acampoy94/SWAP/blob/master/practicas/practica4/Captura4.PNG)
+	![CaptURAHTTPSM2](https://github.com/acampoy94/SWAP/blob/master/Practicas/Practica4/Captura4.PNG)
 
 Pasamos el certificado a la máquina balanceadora:
 
@@ -71,7 +71,7 @@ Pasamos el certificado a la máquina balanceadora:
 
 	`nano /etc/nginx/conf.d/default.conf`
 
-	![Captura Configuración NGINX](https://github.com/acampoy94/SWAP/blob/master/practicas/practica4/Captura5.PNG)
+	![Captura Configuración NGINX](https://github.com/acampoy94/SWAP/blob/master/Practicas/Practica4/Captura5.PNG)
 
 
 
@@ -117,7 +117,7 @@ a `/etc/rc.local` para que se ejecute cada vez que levantemos el sistema.
 Para comprobar que funciona lanzamos un ping a M1, este debería estar bloqueado(no está abierto el tárico ICMP). 
 Ahora visitamos M1 desde un navegador y vemos que funciona, por tanto el cortafuegos está activo.
 
-	![CapturaFirewallM1](https://github.com/acampoy94/SWAP/blob/master/practicas/practica4/Captura6.PNG)
+	![CapturaFirewallM1](https://github.com/acampoy94/SWAP/blob/master/Practicas/Practica4/Captura6.PNG)
 
 
 3-Máquina Firewall[Parte opcional]
@@ -171,7 +171,7 @@ Una vez heco el script le damos permisos de ejecución y ejecutamos, comprobado 
 movemos a `/etc/rc.local` para que se ejecute cuando la máquina arranque.
 Comprobamos que funciona:
 
-	![CapturaMaquinaFirewall](https://github.com/acampoy94/SWAP/blob/master/practicas/practica4/Captura7.PNG)
+	![CapturaMaquinaFirewall](https://github.com/acampoy94/SWAP/blob/master/Practicas/Practica4/Captura7.PNG)
 
 Como vemos nos lleva a los servidores y hace el balanceo correctamente, pero no podemos hacer ping
 por tanto el firewall está funcionando correctamente.
