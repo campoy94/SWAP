@@ -5,7 +5,7 @@
 Entramos en MySQL tecleando `mysql -uroot -p`, nos pedirá nuestra contraseña.
 Una vez dentro de MySQL podremos crear nuestra base de datos, en la consola de MySQL:
 
-`mysql> create database contactos;
+`	mysql> create database contactos;
 
 	mysql> use contactos;
 
