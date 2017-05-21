@@ -1,6 +1,6 @@
 # Práctica 5. Replicación de bases de datos MySQL
 
-##1. Crear BD en M1
+## 1. Crear BD en M1
 
 Entramos en MySQL tecleando `mysql -uroot -p`, nos pedirá nuestra contraseña.
 Una vez dentro de MySQL podremos crear nuestra base de datos, en la consola de MySQL:
@@ -28,7 +28,7 @@ Una vez dentro de MySQL podremos crear nuestra base de datos, en la consola de M
 ![Captura1](https://github.com/campoy94/SWAP/blob/master/Practicas/Practica5/img/Captura1.PNG)
 
 
-##2. Replicar una BD MySQL con mysqldump
+## 2. Replicar una BD MySQL con mysqldump
 
 mysqldump es una herramienta que nos ofrece MySQL para crear copias de nuestras Bases de Datos. Lo usaremos para crear una
 copia de seguridad de nuestra base, y transferirla a M2.
