@@ -5,27 +5,25 @@
 Entramos en MySQL tecleando `mysql -uroot -p`, nos pedirá nuestra contraseña.
 Una vez dentro de MySQL podremos crear nuestra base de datos, en la consola de MySQL:
 
-`
-mysql> create database contactos;
+` mysql> create database contactos;
 
-mysql> use contactos;
+ mysql> use contactos;
 
-mysql> show tables;
+ mysql> show tables;
 
-mysql> create table datos(nombre varchar(100),tlf int);
+ mysql> create table datos(nombre varchar(100),tlf int);
 
-mysql> show tables;
+ mysql> show tables;
 
-mysql> insert into datos(nombre,tlf) values ("juan",123456789);
+ mysql> insert into datos(nombre,tlf) values ("juan",123456789);
 
-[insertamos varias tuplas]
+ [insertamos varias tuplas]
 
-mysql> select * from datos;
+ mysql> select * from datos;
 
-[veremos las tuplas insertadas]
+ [veremos las tuplas insertadas]
 
-mysql> exit[para salir]
-`
+ mysql> exit[para salir] `
 
 ![Captura1](https://github.com/campoy94/SWAP/blob/master/Practicas/Practica5/img/Captura1.PNG)
 
