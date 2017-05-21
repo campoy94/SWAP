@@ -43,7 +43,7 @@ Fuera de la base de datos en nuestra consola escribimos:
 
 `mysqldump "nombreBD" -u root -p > /tmp/nombreBD.sql
 
- password:*****`
+	password:*****`
 
 Ya tenemos nuestra copia, como habíamos bloqueado las tablas debemos desbloquearlas, entramos en mysql:
 
@@ -63,10 +63,9 @@ Para hacerlo entramos en MySQL en M2:
 
 `mysql -u root -p
 
- mysql> CREATE DATABASE nombreBD;
+	mysql> CREATE DATABASE nombreBD;
 
- mysql> exit
-`
+	mysql> exit`
 
 Una vez creada la base de datos en M2 podemos volcar la copia de seguridad:
 
@@ -140,8 +139,7 @@ de errores.
 Ahora volvemos al servidor maestro y entramos en mysql, crearemos un nuevo usuario 'esclavo' y le daremos permisos
 de replicación:
 
-`
-	mysql> CREATE USER esclavo IDENTIFIED BY 'esclavo';
+`	mysql> CREATE USER esclavo IDENTIFIED BY 'esclavo';
 
 	mysql> GRANT REPLICATION SLAVE ON *.* TO 'esclavo'@'%' IDENTIFIED BY 'esclavo';
 
@@ -149,8 +147,7 @@ de replicación:
 
 	mysql> FLUSH TABLES;
 
-	mysql> FLUSH TABLES WITH READ LOCK;
-`
+	mysql> FLUSH TABLES WITH READ LOCK;`
 
 Por último obtenemos los datos de la BD que vamos a replicar para usarlos en la configuración del esclavo:
 
@@ -160,10 +157,10 @@ Por último obtenemos los datos de la BD que vamos a replicar para usarlos en la
 
 Ahora volvemos a máquina esclavo y entramos en MySQL para darle los datos del maestro:
 
-	`mysql> CHANGE MASTER TO MASTER_HOST='IPM1',
-	 MASTER_USER='esclavo', MASTER_PASSWORD='esclavo',
- 	 MASTER_LOG_FILE='mysql-bin.000001', MASTER_LOG_POS=501,
-	 MASTER_PORT=3306;`
+`	mysql> CHANGE MASTER TO MASTER_HOST='IPM1',
+	MASTER_USER='esclavo', MASTER_PASSWORD='esclavo',
+ 	MASTER_LOG_FILE='mysql-bin.000001', MASTER_LOG_POS=501,
+	MASTER_PORT=3306;`
 
 Si todo está correcto solo nos queda arrancar el esclavo:
 
