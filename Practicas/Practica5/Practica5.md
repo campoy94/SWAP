@@ -1,4 +1,4 @@
-#Práctica 5. Replicación de bases de datos MySQL
+# Práctica 5. Replicación de bases de datos MySQL
 
 ##1. Crear BD en M1
 
@@ -150,7 +150,7 @@ Por último obtenemos los datos de la BD que vamos a replicar para usarlos en la
 
 	`mysql> SHOW MASTER STATUS;`
 
-[!Captura5](https://github.com/campoy94/SWAP/blob/master/Practicas/Practica5/img/Captura5.PNG)
+![Captura5](https://github.com/campoy94/SWAP/blob/master/Practicas/Practica5/img/Captura5.PNG)
 
 Ahora volvemos a máquina esclavo y entramos en MySQL para darle los datos del maestro:
 
@@ -163,7 +163,7 @@ Si todo está correcto solo nos queda arrancar el esclavo:
 
 	`mysql> START SLAVE;`
 
-[!Captura6](https://github.com/campoy94/SWAP/blob/master/Practicas/Practica5/img/Captura6.PNG)
+![Captura6](https://github.com/campoy94/SWAP/blob/master/Practicas/Practica5/img/Captura6.PNG)
 
 Ya está en marcha la configuración maestro-esclavo, los demonios de MySQL debería replicar automáticamente
 lo que hagamos en la máquina maestro.
@@ -178,11 +178,11 @@ esclavo y hacemos lo siguiente:
 
 Comprobamos que el valor de la variable "Seconds_Behind_Master" no es "null". Si es así todo esta correcto.
 
-[!Captura7](https://github.com/campoy94/SWAP/blob/master/Practicas/Practica5/img/Captura7.PNG)
+![Captura7](https://github.com/campoy94/SWAP/blob/master/Practicas/Practica5/img/Captura7.PNG)
 
 Ahora solo queda introducir algo en el maestro para comprobar que realmente está funcionando:
 
-[!Captura8](https://github.com/campoy94/SWAP/blob/master/Practicas/Practica5/img/Captura8.PNG)
+![Captura8](https://github.com/campoy94/SWAP/blob/master/Practicas/Practica5/img/Captura8.PNG)
 
 La configuración maestro-esclavo está funcionando perfectamente.
 
