@@ -4,25 +4,26 @@
 
 Entramos en MySQL tecleando `mysql -uroot -p`, nos pedirá nuestra contraseña.
 Una vez dentro de MySQL podremos crear nuestra base de datos, en la consola de MySQL:
-`mysql> create database contactos;
 
- mysql> use contactos;
+`	mysql> create database contactos;
 
- mysql> show tables;
+ 	mysql> use contactos;
 
- mysql> create table datos(nombre varchar(100),tlf int);
+ 	mysql> show tables;
 
- mysql> show tables;
+ 	mysql> create table datos(nombre varchar(100),tlf int);
 
- mysql> insert into datos(nombre,tlf) values ("juan",123456789);
+ 	mysql> show tables;
+
+ 	mysql> insert into datos(nombre,tlf) values ("juan",123456789);
 
 	[insertamos varias tuplas]
 
- mysql> select * from datos;
+ 	mysql> select * from datos;
 
 	[veremos las tuplas insertadas]
 
- mysql> exit[para salir]
+ 	mysql> exit[para salir]
 `
 
 ![Captura1](https://github.com/campoy94/SWAP/blob/master/Practicas/Practica5/img/Captura1.PNG)
@@ -35,17 +36,20 @@ copia de seguridad de nuestra base, y transferirla a M2.
 Para asegurarnos de que nadie acceda y modifique la base de datos entraremos a nuestro MySQL y pondremos lo siguiente:
 
 `mysql> FLUSH TABLRS WITH READ LOCK;
+
  mysql> exit`
 
 Una vez hecho esto procedemos a utilizar mysqldump para hacer la copia de los datos.
 Fuera de la base de datos en nuestra consola escribimos:
 
 `mysqldump "nombreBD" -u root -p > /tmp/nombreBD.sql
+
  password:*****`
 
 Ya tenemos nuestra copia, como habíamos bloqueado las tablas debemos desbloquearlas, entramos en mysql:
 
 `mysql> UNLOCK TABLES;
+
  mysql> exit`
 
 Una vez tenemos nuestra copia ya podemos pasarla a M2 para replicar nuestra base de datos.
@@ -59,8 +63,9 @@ de la base de datos en sí. Por tanto debemos crear la base de datos en M2 antes
 Para hacerlo entramos en MySQL en M2:
 
 `mysql -u root -p
- .
+
  mysql> CREATE DATABASE nombreBD;
+
  mysql> exit
 `
 
@@ -76,7 +81,7 @@ Ahora ya tenemos replicada la BD, podemos comprobarlo entrando en ella y haciend
 
 Veremos que son los mismos que teniamos en M1.
 
-##3.Replicación de BD mediante una configuración maestro-esclavo
+## 3.Replicación de BD mediante una configuración maestro-esclavo
 
 Acabamos de ver como replicar la base de datos de una forma manual, sin embargo esto en un ambiente real esto no es
 algo viable. Por ello MySQL incorpora la opción de configurar un demonio para hacer replicación de las Bases de Datos
@@ -117,15 +122,15 @@ Vemos que no nos ha dado ningun error, si lo hubiera hecho debemos dirigirnos al
 Una vez configurado el maestro vamos a configurar el esclavo, como antes editamos como root el archivo
 de configuración en el servidor esclavo:
 
-	`nano /etc/mysql/my.conf.d/mysqld.cnf`
+`nano /etc/mysql/my.conf.d/mysqld.cnf`
 
 Buscamos server-id y lo descomentamos como hemos hecho antes, pero esta vez el id será 2:
 
-	`server-id = 2`
+`server-id = 2`
 
 Nos salimos del editor guardando los cambios y volvemos a iniciar el MySQL:
 
-	`/etc/init.d/mysql restart`
+`/etc/init.d/mysql restart`
 
 
 ![Captura4](https://github.com/campoy94/SWAP/blob/master/Practicas/Practica5/img/Captura4.PNG)
@@ -136,15 +141,17 @@ de errores.
 Ahora volvemos al servidor maestro y entramos en mysql, crearemos un nuevo usuario 'esclavo' y le daremos permisos
 de replicación:
 
-	`mysql> CREATE USER esclavo IDENTIFIED BY 'esclavo';
+`
+	mysql> CREATE USER esclavo IDENTIFIED BY 'esclavo';
 
-	 mysql> GRANT REPLICATION SLAVE ON *.* TO 'esclavo'@'%' IDENTIFIED BY 'esclavo';
+	mysql> GRANT REPLICATION SLAVE ON *.* TO 'esclavo'@'%' IDENTIFIED BY 'esclavo';
 
-	 mysql> FLUSH PRIVILEGES;
+	mysql> FLUSH PRIVILEGES;
 
-	 mysql> FLUSH TABLES;
+	mysql> FLUSH TABLES;
 
-	 mysql> FLUSH TABLES WITH READ LOCK;`
+	mysql> FLUSH TABLES WITH READ LOCK;
+`
 
 Por último obtenemos los datos de la BD que vamos a replicar para usarlos en la configuración del esclavo:
 
@@ -161,7 +168,7 @@ Ahora volvemos a máquina esclavo y entramos en MySQL para darle los datos del m
 
 Si todo está correcto solo nos queda arrancar el esclavo:
 
-	`mysql> START SLAVE;`
+`mysql> START SLAVE;`
 
 ![Captura6](https://github.com/campoy94/SWAP/blob/master/Practicas/Practica5/img/Captura6.PNG)
 
@@ -169,12 +176,12 @@ Ya está en marcha la configuración maestro-esclavo, los demonios de MySQL debe
 lo que hagamos en la máquina maestro.
 Para comprobar que funciona volvemos al maestro, lo primero que debemos hacer es desbloquear las tablas:
 
-	`mysql> UNLOCK TABLES;`
+`mysql> UNLOCK TABLES;`
 
 Antes de empezar a hacer cambios conviene comprobar que el esclavo no tiene ningun problema, volvemos al 
 esclavo y hacemos lo siguiente:
 
-	`mysql> SHOW SLAVE STATUS\G`
+`mysql> SHOW SLAVE STATUS\G`
 
 Comprobamos que el valor de la variable "Seconds_Behind_Master" no es "null". Si es así todo esta correcto.
 
