@@ -20,7 +20,7 @@ HTTP.
 Aqui vemos una captura del tráfico producido de una petición de mi máquina anfitriona a uno de mis servidores de prácticas.
 He aplicado filtros para obtener solo el tráfico generado de una petición HTTP:
 
-![captura Wireshark](https://github.com/campoy94/SWAP/tree/master/Ejercicios%20Clase/Tema5/ejercicio2T5.PNG)
+![captura Wireshark](https://github.com/campoy94/SWAP/blob/master/Ejercicios%20Clase/Tema5/ejercicio2T5.PNG)
 
 Ejercicio T5.3:
 Buscar información sobre características, disponibilidad para diversos SO, etc de herramientas para monitorizar las
