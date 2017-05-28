@@ -1,0 +1,55 @@
+Ejercicio T6.1:
+Aplicar con iptables una política de denegar todo el tráfico en una de las máquinas de prácticas.
+Comprobar el funcionamiento.
+
+Para bloquear todo el tráfico utilizamos:
+
+	iptables -P INPUT   DROP
+	iptables -P FORWARD DROP
+	iptables -P OUTPUT  DROP
+
+Vemos que no podemos acceder a internet, ni tampoco pueden acceder a nuestra máquina.
+
+Aplicar con iptables una política de permitir todo el tráfico en una de las máquinas de prácticas.
+Comprobar el funcionamiento.
+
+Para aceptar todo el tráfico utilizamos:
+
+	iptables -P INPUT   ACCEPT
+	iptables -P FORWARD ACCEPT
+	iptables -P OUTPUT  ACCEPT
+
+es la configuración que tendriamos por defecto si no tocamos iptables.
+
+Ejercicio T6.2:
+Comprobar qué puertos tienen abiertos nuestras máquinas, su estado, y qué programa o demonio lo ocupa.
+
+Hay varias formas de hacerlo, con netstat podriamos usar(con privilegios root):
+
+	netstat -lp --inet
+
+pero esta nos muestra los programas y protocolos que utilizan, no el puerto en concreto, por eso es mejor utilizar nmap,
+con la siguiente sintaxis:
+
+	nmap -sT -O localhost
+
+Este si nos muestra una lista de los puertos, el protocolo y el servicio que los está utilizando.
+	
+Ejercicio T6.3:
+Buscar información acerca de los tipos de ataques más comunes en servidores web (p.ej. secuestros de sesión).
+Detallar en qué consisten, y cómo se pueden evitar.
+
+Secuestro de sesión: trada de secuestrar una sesión TCP, de esta forma se hace con la cuenta del usuario en la Web y se hace
+pasar por el mismo. Las credenciales de acceso a las web suelen estar en las cookies o en los paquetes que viajan desde
+el usuario al server.
+
+Ataque por inyección: trata de camuflarnos un programa para que, sin nosotros saberlo, se ejecute en nuestro servidor.
+Uno de los más clásicos es la inyección de código PHP, este se suele utilizar para realizar consultas a las bases de datos,
+normalmente, MySQL y robarnos los datos que guardamos en nuestras BD.
+
+Para evitiar este tipo de ataques debemos tener muy controlada la ejecución de códigos, de forma que solo se puedan ejecutar
+los códigos que tenemos guardados en ciertos lugares no accesibles al público.
+
+DDoS(Denegación de servicios): trata de tirarnos abajo el sitio web mediante cantidades enormes de peticiones al mismo,
+provocando así la denegación del servicio.
+
