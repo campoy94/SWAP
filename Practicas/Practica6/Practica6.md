@@ -1,4 +1,4 @@
-#Práctica 6. Discos en RAID
+# Práctica 6. Discos en RAID
 
 En esta práctica se confiugran dos discos en RAID 1(RAID 1 hace una copia exacta con la misma información en ambos discos).
 
@@ -6,7 +6,7 @@ Se crearán dos discos nuevos y se añadiran a una máquina servidor(Ubuntu 16).
 dos discos nuevos en RAID 1.
 Luego realizaremos pruebas añadiendo y retirando discos "en caliente", para comrpbar la fiabilidad de RAID 1.
 
-##1. Configuración del RAID por software
+## 1. Configuración del RAID por software
 
 Antes de hacer la configuración RAID tenemos que añadir los discos con la máquina apagada.
 Yo he utilizado VMware Workstation para las prácticas, para añadir los discos debemos seleccionar nuestra máquina virtual,
@@ -76,7 +76,7 @@ estado del RAID.
 
 ![captura detalles RAID](https://github.com/campoy94/SWAP/blob/master/Practicas/Practica6/img/Captura5.PNG)
 
-##2. Configurar el montaje del RAID al inicio del sistema
+## 2. Configurar el montaje del RAID al inicio del sistema
 
 Una vez configurado el RAID conviene configurar el sistema para que monte el dispositivo RAID
 cuando arranque el sistema. Para hacer esto deberemos editar el archivo `/etc/fstab`.
@@ -99,7 +99,7 @@ Añadiremos al final del mismo la siguiente línea:
 
 Con esto ya tendremos montado el RAID cada vez que arranquemos la máquina.
 
-##3. Simular fallos en los discos
+## 3. Simular fallos en los discos
 
 Por último para probar la fiabilidad de nuestro RAID 1 podemos simular un fallo en uno de los discos:
 Para ello utilizamos mdadm:
@@ -117,7 +117,7 @@ Y por último reemplazamos "en caliente" el disco averiado:
 
 ![Captura8](https://github.com/campoy94/SWAP/blob/master/Practicas/Practica6/img/Captura8.PNG)
 
-##4. Configurar un servidor NFS[Parte Opcional]
+## 4. Configurar un servidor NFS[Parte Opcional]
 
 Para configurar un servidor NFS lo primero que debemos instalar son las utilidades de Linux para
 crear un servidor NFS, normalmente viene ya instalado, pero por si acaso:
