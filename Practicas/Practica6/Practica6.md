@@ -172,5 +172,5 @@ el cliente solo podrá leerlos.
 
 -------------------------------------------------------------------------------------------------------
 !!Importante:
-En este punto, el dispositivo se habrá creado con el nombre /dev/md0, sin embargo, en cuanto reiniciemos 
-la máquina, Linux lo renombrará y pasará a llamarlo /dev/md127.
+Cuando reiniciemos la máquina el dispositivo creado con el nombre /dev/md0 será renombrado por Linux
+y pasará a llamarlo /dev/md127.
